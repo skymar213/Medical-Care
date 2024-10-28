@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/Registry/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/Registry/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms-auth/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms-gateway/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms-gateway/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms-gestionrdv/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms-gestionrdv/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms-profile-mysql/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms-profile/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms-profile/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms-rech-avancee/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms-rech-avancee/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms-recherche/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms-recherche/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/ms-registry/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+  </component>
+</project>

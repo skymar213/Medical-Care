@@ -1,0 +1,70 @@
+version: '3.9'
+services:
+  eureka-server:
+    image: registry-image
+    ports:
+      - 8889:8888
+
+  gateway-service:
+    image: gateway-image
+    depends_on:
+      - eureka-server
+    ports:
+      - 7778:7777
+    environment:
+      profile: "default"
+      eureka.client.serviceUrl.defaultZone: "http://eureka-server:8888/eureka"
+
+  db-mysql-profile:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: "${password}"
+      MYSQL_DATABASE: "${ms-profile}"
+
+
+  ms-profile-service:
+    build: /ms-profile/
+    image: ms-profile-image
+    depends_on:
+      - eureka-server
+      - gateway-service
+      - db-mysql-profile
+    environment:
+      profile: "default"
+      eureka.client.serviceUrl.defaultZone: "http://eureka-server:8888/eureka"
+      spring.datasource.url: "${url}"
+      spring.datasource.password: "${password}"
+    restart: on-failure
+
+
+  ms-gestionrdv-service:
+    build: /ms-gestionrdv/
+    image: ms-gestionrdv-image
+    depends_on:
+      - eureka-server
+      - gateway-service
+    environment:
+      profile: "default"
+      eureka.client.serviceUrl.defaultZone: "http://eureka-server:8888/eureka"
+
+
+  ms-rech-avancee-service:
+    build: /ms-rech-avancee/
+    image: ms-rech-avancee-image
+    depends_on:
+      - eureka-server
+      - gateway-service
+    environment:
+      profile: "default"
+      eureka.client.serviceUrl.defaultZone: "http://eureka-server:8888/eureka"
+
+  ms-recherche-service:
+    build: /ms-rech-avancee/
+    image: ms-recherche-image
+    depends_on:
+      - eureka-server
+      - gateway-service
+    environment:
+      profile: "default"
+      eureka.client.serviceUrl.defaultZone: "http://eureka-server:8888/eureka"

@@ -1,0 +1,58 @@
+server:
+  port: 7777
+
+logging:
+  level:
+    org:
+      springframework:
+        cloud:
+          gateway: TRACE
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8888/eureka
+    fetch-registry: true
+    register-with-eureka: true
+
+spring:
+  application:
+    name: ms-gateway
+  cloud:
+    gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+      routes:
+        - id: route1
+          predicates:
+            - Path=/ms-rech-avancee/recherche-avancee
+          filters:
+            - RewritePath=/ms-rech-avancee/(?<segment>.*), /api/medecins/${segment}
+          uri: lb://ms-rech-avancee
+
+        - id: route2
+          predicates:
+            - Path=/ms-recherche/search/findByNomM, /ms-recherche/search/findByWilaya
+          filters:
+            - RewritePath=/ms-recherche/(?<segment>.*), /api/medecin/${segment}
+          uri: lb://ms-recherche
+
+        - id: route3
+          predicates:
+            - Path=/ms-profile/patients, /ms-profile/medecins/search, /ms-profile/medecins/searchWilaya, /ms-profile/medecins/searchSpecialite , /ms-profile/getMedecinName, /ms-profile/medecins/{idMedecin} , /ms-profile/getPatientName, /ms-profile/loginMedecin, /ms-profile/loginPatient, /ms-profile/medecins, /ms-profile/medecins/{idMedecin}, /ms-profile/patients/{idPatients}, /ms-profile/verifyIdMedecin{id}, /ms-profile/verifyIdPatient{id}
+          filters:
+            - RewritePath=/ms-profile/(?<segment>.*), /api/profile/${segment}
+          uri: lb://ms-profile
+
+        - id: route4
+          predicates:
+            - Path=/ms-gestionRdv/create,/ms-gestionRdv/etat/{id},/ms-gestionRdv/heure/{id},/ms-gestionRdv/description/{id} , /ms-gestionRdv/dossier/delete/{id},/ms-gestionRdv/medecin/{idMedecin}, /ms-gestionRdv/dossier/medecin/{idMedecin} , /ms-gestionRdv/delete/{id}, /ms-gestionRdv/medecin/{idMedecin}, /ms-gestionRdv/all, /ms-gestionRdv/patient/{idPatient}, /ms-gestionRdv/{idMedecin}, /ms-gestionRdv/dossier/create, /ms-gestionRdv/dossier/all, /ms-gestionRdv/dossier/{idDossier}, /ms-gestionRdv/dossier/update/{idDossier}, /ms-gestionRdv/dossier/{idDossier}/rdv/{idRdv}, /ms-gestionRd/dossier/{idDossier}/rdv/{idRdv}/update, /ms-gestionRdv/dossier/{idDossier}/rdv/{idRdv}/delete, /ms-gestionRdv/dossier/{idDossier}/rdv/{idRdv}/updateEtat, /ms-gestionRdv/dossier/{idDossier}/rdv/{idRdv}/updateEtat/{etat}, /ms-gestionRdv/dossier/{idDossier}/rdv/{idRdv}/updateEtat/{etat}/update
+          filters:
+            - RewritePath=/ms-gestionRdv/(?<segment>.*), /api/rdv/${segment}
+          uri: lb://ms-gestionRdv
+      default-filters:
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials, RETAIN_UNIQUE

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="FrameworkDetectionExcludesConfiguration">
+    <file type="web" url="file://$PROJECT_DIR$/ms-auth" />
+    <file type="web" url="file://$PROJECT_DIR$/ms-gestionrdv" />
+    <file type="web" url="file://$PROJECT_DIR$/ms-registry" />
+  </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-rech-avancee/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-profile/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-recherche/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-gestionRdv/pom.xml" />
+        <option value="$PROJECT_DIR$/Registry/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-registry/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-gateway/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-profile-mysql/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-auth/pom.xml" />
+      </list>
+    </option>
+    <option name="ignoredFiles">
+      <set>
+        <option value="$PROJECT_DIR$/ms-auth/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-profile-mysql/pom.xml" />
+        <option value="$PROJECT_DIR$/ms-registry/pom.xml" />
+      </set>
+    </option>
+    <option name="workspaceImportForciblyTurnedOn" value="true" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_17" default="true" project-jdk-name="17" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>

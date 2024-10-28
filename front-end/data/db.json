@@ -1,0 +1,54 @@
+{
+  "medicalRecords": [
+    {
+      "id": "1",
+      "firstName": "John",
+      "lastName": "Doe",
+      "age": 30,
+      "disease": "Flu",
+      "treatment": "Rest and hydration"
+    },
+    {
+      "id": "2",
+      "firstName": "Jane",
+      "lastName": "Doe",
+      "age": 25,
+      "disease": "Cold",
+      "treatment": "Over-the-counter medication"
+    },
+    {
+      "id": "2347",
+      "firstName": "fdsfdssdfsdf",
+      "lastName": "dgfgdfsfdsdf",
+      "age": "41",
+      "disease": "cxvvx",
+      "treatment": "traitement2"
+    }
+  ],
+  "appointments": [
+    {
+      "id": "1",
+      "firstName": "David",
+      "lastName": "Doe",
+      "age": 30,
+      "wilaya": "Algiers",
+      "date": "30/06/2024"
+    },
+    {
+      "id": "2",
+      "firstName": "David",
+      "lastName": "Doe",
+      "age": 30,
+      "wilaya": "Algiers",
+      "date": "30/06/2024"
+    },
+    {
+      "id": "3",
+      "firstName": "David",
+      "lastName": "david",
+      "age": 30,
+      "wilaya": "Algiers",
+      "date": "30/06/2024"
+    }
+  ]
+}
